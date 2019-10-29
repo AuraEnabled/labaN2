@@ -62,19 +62,7 @@ public class Patients {
                 patient.setDebt(0);
             }
         }
-/*
-        for (int i = 1; i < this.list.length - 1; i++) {
-            while ((this.list[i - 1].getFullName() == null) && (this.list[i - 1].getId() == 0) &&  (this.list[i - 1].getInTotal() == 0) && (!this.list[i - 1].isPaid()) && (this.list[i - 1].getDebt() == 0)){
-                this.list[i - 1].setFullName(this.list[i].getFullName());
-                this.list[i - 1].setId(this.list[i].getId());
-//              this.list[i - 1].setProcedure(this.list[i].getProcedures());
-                this.list[i - 1].setInTotal(this.list[i].getInTotal());
-                this.list[i - 1].setPaid(this.list[i].isPaid());
-                this.list[i - 1].setDebt(this.list[i].getDebt());
-                i++;
-            }
-        }
-*/
+
         System.out.println("Delete succeed");
     }
 
