@@ -10,6 +10,7 @@ public class Patient {
     private boolean paid;
     private double debt;
 
+
     public enum Procedures{
         Кастрация,
         Чистка,
@@ -38,6 +39,8 @@ public class Patient {
         this.debt=0;
     }
 
+//  геттеры
+
     public String getFullName() {
         return fullName;
     }
@@ -60,5 +63,35 @@ public class Patient {
 
     public double getDebt() {
         return debt;
+    }
+
+//  с е т т е р ы
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setProcedure(String procedure) {
+        this.procedure = procedure;
+    }
+
+    public void setInTotal(double inTotal) {
+        this.inTotal = inTotal;
+    }
+
+    public void setPaid(boolean paid) {
+        this.paid = paid;
+    }
+
+    public void setDebt(double debt) {
+        this.debt = debt;
+    }
+
+    public void setTypeProcedures(Procedures typeProcedures) {
+        this.typeProcedures = typeProcedures;
     }
 }
