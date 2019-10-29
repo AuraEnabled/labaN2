@@ -58,6 +58,9 @@ public class Main {
                 case 5:
                     patients.dumpMem();
                     break;
+                default:
+                    continue;
+
             }
         }
     }
