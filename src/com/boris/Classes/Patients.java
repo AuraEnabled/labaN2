@@ -1,34 +1,36 @@
 package com.boris.Classes;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Patients {
 
-    private Patient[] list;
+    public ArrayList<Patient> listOfPatients = new ArrayList<Patient>();
+////    private Patient[] list;
 //  пустой конструктор
-    public Patients(){
-       Patient[] patient = new Patient[0];
-    }
+//    public Patients(){
+//       Patient[] patient = new Patient[0];
+//    }
 //  объявление массива пациентов
-    public Patients(int quantity){
-        this.list = new Patient[quantity];
-    }
+//    public Patients(int quantity){
+//        this.list = new Patient[quantity];
+//    }
 //  добавление нового пациента
-    public void add(Patient patient, int position){
-        this.list[position-1] = patient;
-    }
+//    public void add(Patient patient, int position){
+//        this.list[position-1] = patient;
+//    }
 //  пациент по фамилии
     public String getPatientBySurname(String surname){
         String patients="";
-        for(int i=0;i<this.list.length;i++){
-            if(this.list[i].getFullName()!=null){
-                if(this.list[i].getFullName().contains(surname)) {
-                    patients += ("Ф.И.О: " + this.list[i].getFullName() +
-                            "\nНомер учётной карточки: " + this.list[i].getId() +
-                            "\nВид работы: " + this.list[i].getProcedures() +
-                            "\nСтоимость выполненой работы: " + this.list[i].getInTotal() +
-                            "\nОтметка об оплате: " + this.list[i].isPaid() +
-                            "\nСумма задолженности за лечение: " + this.list[i].getDebt() + "\n\n");
+        for(Patient patient: listOfPatients){
+            if(patient.getFullName()!=null){
+                if(patient.getFullName().contains(surname)) {
+                    patients += ("Ф.И.О: " + patient.getFullName() +
+                            "\nНомер учётной карточки: " + patient.getId() +
+                            "\nВид работы: " + patient.getProcedures() +
+                            "\nСтоимость выполненой работы: " + patient.getInTotal() +
+                            "\nОтметка об оплате: " + patient.isPaid() +
+                            "\nСумма задолженности за лечение: " + patient.getDebt() + "\n\n");
                     return patients;
                 }
             }
@@ -38,21 +40,21 @@ public class Patients {
 //  справка о должниках
     public String getDebtors(){
         String debtors = "";
-        for (int i = 0; i < this.list.length; i++){
-            if(!this.list[i].isPaid()){
-                debtors +=("Ф.И.О: " + this.list[i].getFullName() +
-                        "\nНомер учётной карточки: " + this.list[i].getId() +
-                        "\nВид работы: " + this.list[i].getProcedures() +
-                        "\nСтоимость выполненой работы: " + this.list[i].getInTotal() +
-                        "\nОтметка об оплате: " + this.list[i].isPaid() +
-                        "\nСумма задолженности за лечение: " + this.list[i].getDebt() + "\n\n");
+        for (Patient patient : listOfPatients){
+            if(!patient.isPaid()){
+                debtors +=("Ф.И.О: " + patient.getFullName() +
+                        "\nНомер учётной карточки: " + patient.getId() +
+                        "\nВид работы: " + patient.getProcedures() +
+                        "\nСтоимость выполненой работы: " + patient.getInTotal() +
+                        "\nОтметка об оплате: " + patient.isPaid() +
+                        "\nСумма задолженности за лечение: " + patient.getDebt() + "\n\n");
             }
         }
      return debtors;
     }
 //  удаление записей без задолженности
     public void removeAllPaidNotes(){
-        for (Patient patient : this.list) {
+        for (Patient patient : listOfPatients) {
             if (patient.isPaid()) {
                 patient.setFullName(null);
                 patient.setId(0);
@@ -71,7 +73,7 @@ public class Patients {
     @Override
     public String toString() {
         String patients="";
-        for (Patient patient:this.list) {
+        for (Patient patient:listOfPatients) {
             if(
                     (patient.getFullName() == null) && (patient.getId() == 0) && /*(patient.getProcedures() == null) &&*/ (patient.getInTotal() == 0) && (!patient.isPaid()) && (patient.getDebt() == 0)
             )
@@ -89,7 +91,7 @@ public class Patients {
 
     public void dumpMem(){
         String patients="";
-        for (Patient patient:this.list) {
+        for (Patient patient:listOfPatients) {
             patients+=("Ф.И.О: "+ patient.getFullName()+
                     "\nНомер учётной карточки: "+patient.getId()+
                     "\nВид работы: "+patient.getProcedures()+
