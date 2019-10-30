@@ -56,12 +56,15 @@ public class Patients {
     public void removeAllPaidNotes(){
         for (Patient patient : listOfPatients) {
             if (patient.isPaid()) {
+                listOfPatients.remove(patient);
+                /*
                 patient.setFullName(null);
                 patient.setId(0);
                 patient.setProcedure(null);
                 patient.setInTotal(0);
                 patient.setPaid(false);
                 patient.setDebt(0);
+                */
             }
         }
 
