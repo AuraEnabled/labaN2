@@ -16,7 +16,7 @@ public class Patient {
         Чистка,
         Пломбирование,
         Протезирование,
-        Кремация;
+        Кремация
     }
 
     Procedures typeProcedures;
@@ -39,7 +39,20 @@ public class Patient {
         this.debt=0;
     }
 
-//  геттеры
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "fullName='" + fullName + '\'' +
+                ", id=" + id +
+                ", procedure='" + procedure + '\'' +
+                ", inTotal=" + inTotal +
+                ", paid=" + paid +
+                ", debt=" + debt +
+                ", typeProcedures=" + typeProcedures +
+                '}';
+    }
+
+    //  геттеры
 
     public String getFullName() {
         return fullName;

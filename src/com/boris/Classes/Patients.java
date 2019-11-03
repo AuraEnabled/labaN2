@@ -54,17 +54,11 @@ public class Patients {
     }
 //  удаление записей без задолженности
     public void removeAllPaidNotes(){
-        for (Patient patient : listOfPatients) {
-            if (patient.isPaid()) {
-                listOfPatients.remove(patient);
-                /*
-                patient.setFullName(null);
-                patient.setId(0);
-                patient.setProcedure(null);
-                patient.setInTotal(0);
-                patient.setPaid(false);
-                patient.setDebt(0);
-                */
+        for (int i =0;i<listOfPatients.size(); i++) {
+            if (listOfPatients.get(i).isPaid()) {
+                System.out.println(listOfPatients.toString());//get(i)
+                listOfPatients.remove(i);
+                i--;
             }
         }
 

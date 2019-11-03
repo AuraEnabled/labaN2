@@ -5,7 +5,7 @@ import com.boris.Classes.Patients;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Arrays;
-
+//  list.forEach(System.out::println);
 public class Main {
 
     private String fullName;
@@ -28,7 +28,7 @@ public class Main {
         patients.listOfPatients.add(new Patient("Шмурдяк Антон", 14, Patient.Procedures.Кремация, 800, false, 400));
         patients.listOfPatients.add(new Patient("Горин Геннадий", 5, Patient.Procedures.Протезирование, 500, false, 500));
         patients.listOfPatients.add(new Patient("Белоглазов Анатолий", 88, Patient.Procedures.Чистка, 500, true, 0));
-        patients.listOfPatients.add(new Patient());
+        patients.listOfPatients.add(new Patient("Борис Бритва", 15, Patient.Procedures.Пломбирование, 350, true, 0));
 
         System.out.println("Выберите действие\n\tПоиск по базе - 1\n\tСправки о должниках - 2\n\tУдалить записи без задолженностей - 3\n\tВывести данные по всем записям - 4");
 
