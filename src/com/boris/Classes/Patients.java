@@ -65,7 +65,7 @@ public class Patients {
         System.out.println("Delete succeed");
     }
 
-
+//      абрвалг абрвалг
 
     @Override
     public String toString() {
