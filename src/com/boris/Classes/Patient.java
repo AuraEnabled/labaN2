@@ -1,8 +1,9 @@
 package com.boris.Classes;
 
+import java.io.Serializable;
 import java.lang.String;
 
-public class Patient {
+public class Patient implements Serializable {
     private String fullName;
     private int id;
     private String procedure;

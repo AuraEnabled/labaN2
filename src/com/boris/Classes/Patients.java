@@ -5,7 +5,11 @@ import java.util.Arrays;
 
 public class Patients {
 
-    public ArrayList<Patient> listOfPatients = new ArrayList<Patient>();
+    private ArrayList<Patient> listOfPatients = new ArrayList<Patient>();
+
+    public ArrayList<Patient> getListOfPatients() {
+        return listOfPatients;
+    }
 ////    private Patient[] list;
 //  пустой конструктор
 //    public Patients(){
@@ -66,7 +70,6 @@ public class Patients {
     }
 
 //      абрвалг абрвалг
-
     @Override
     public String toString() {
         String patients="";
